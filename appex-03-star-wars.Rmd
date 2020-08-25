@@ -1,0 +1,78 @@
+---
+title: "AE 03"
+subtitle: "Visualizing Star Wars characters"
+date: "Due: August 26, 11:59PM"
+author: "YOUR NAME GOES HERE"
+output: 
+  html_document: 
+    toc: TRUE
+    toc_float: TRUE
+    fig_height: 4
+    fig_width: 9
+---
+
+```{r load-packages, include=FALSE}
+library(tidyverse)
+```
+
+### Recap: individual assignment workflow
+
+- Click on the link provided in the slides to create your own private repo for 
+this exercise.
+
+- Go to the `ae-03-star-wars-your-name-here` repo on GitHub that you created
+
+- Click on the green **Code** button, **Use HTTPS**, and click on the clipboard 
+icon to copy the repo URL.
+
+- Go to RStudio and go to *File* $\rightarrow$ *New Project* $\rightarrow$ 
+*Version Control* $\rightarrow$ *Git, then paste the URL or your assignment
+repo into the dialog box *Repository URL*.
+
+- Browse to an appropriate place (perhaps creating a new folder if desired) on
+the virtual machine for a folder to be created that contains the AE materials.
+
+- Click *Create Project*, and log in using your GitHub credentials. If you have
+successfully logged in, the files from your repo will be displayed in the 
+*Files* pane.
+
+- Configure git by typing the following in the Console (using your GitHub
+username and e-mail as appropriate)
+
+```{r eval=FALSE}
+library(usethis)
+use_git_config(user.name="your name", user.email="your email")
+```
+
+**RStudio and GitHub can now commmunicate with each other and you are ready to do the exercise!**
+
+## Practice with ggplot
+
+1. Modify the following plot to change the color of all points to `"pink"`. Knit the document.
+
+```{r starwars-plot}
+ggplot(data = starwars, 
+       mapping = aes(x = height, y = mass, color = gender, size = birth_year)) +
+  geom_point(color = "darkblue") +
+  labs(title = "_____" , size = "_____", x = "_____", y = "_____")
+```
+
+2. Add labels for title, x and y axes, and size of points. Knit again.
+
+3. Suppress the warning message in your R chunk by adding an appropriate option.
+Be careful about commas!
+
+4. Create a scatterplot visualization of your choice. What relationship(s) 
+do(es) your plot illustrate?
+
+5. Try to make a histogram of a numerical variable of your choice by modifying 
+the `geom_[something]` function (I know we haven't covered it formally - where
+might you go for help?).
+
+## Stage, commit and push
+
+1. Commit the changes you made using an simple and informative message. You can 
+find the Commit box in the Git tab in the top right pane. Remember, 
+**these changes must first be staged**.
+2. **Push** your changes to your repo on GitHub. You will have to log in again.
+3. Check your repo on GitHub and see the updated files.
